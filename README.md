@@ -1,2 +1,2 @@
-# 2nd-Year
+# 2nd-Year CSSE
 Projects and Assignments completed during my second year of Computer Science and Software Engineering in NUI Maynooth (2021-2022)
