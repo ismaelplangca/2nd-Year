@@ -3,7 +3,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -59,15 +58,15 @@ public class Main {
         return matrix;
     }
     private static ArrayList<Integer> nearestNeighbour(double[][] matrix) {
-        var visited = new HashSet<Integer>();
+        boolean[] visited = new boolean[121];
         var path = new ArrayList<Integer>();
         path.add(0);
-        visited.add(0);
+        visited[0] = true;;
         for(int i = 0;;) {
             double localMin = Double.MAX_VALUE;
             int localMinIndex = -1;
             for(int j = 0; j < matrix[i].length; j++) {
-                if(j != i && !visited.contains(j) && matrix[i][j] < localMin) {
+                if(j != i && !visited[j] && matrix[i][j] < localMin) {
                     localMin = matrix[i][j];
                     localMinIndex = j;
                 }
@@ -75,7 +74,7 @@ public class Main {
             if((i = localMinIndex) == -1)
                 break;
             path.add(localMinIndex);
-            visited.add(localMinIndex);
+            visited[localMinIndex] = true;
         }
         return path;
     }
