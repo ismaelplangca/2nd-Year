@@ -61,7 +61,7 @@ public class Main {
         boolean[] visited = new boolean[121];
         var path = new ArrayList<Integer>();
         path.add(0);
-        visited[0] = true;;
+        visited[0] = true;
         for(int i = 0;;) {
             double localMin = Double.MAX_VALUE;
             int localMinIndex = -1;
@@ -99,6 +99,6 @@ public class Main {
     }
     private static void reverse(List<Integer> list) {
         for(int i = 0; i < list.size() / 2; i++)
-            Collections.swap(list, i, list.size() - i -1);
+            Collections.swap(list, i, list.size() - i - 1);
     }
 }
